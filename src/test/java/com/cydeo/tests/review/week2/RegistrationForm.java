@@ -1,6 +1,7 @@
 package com.cydeo.tests.review.week2;
 
 import com.cydeo.utilities.WebDriverFactory;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,6 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 
 import java.time.Duration;
+import java.util.List;
 
 public class RegistrationForm {
 
@@ -93,10 +95,22 @@ public class RegistrationForm {
         // 9. Click to "Male" from Gender
         WebElement maleBtn = driver.findElement(By.cssSelector("input[value='male']"));
         maleBtn.click();
+        //Assert.assertTrue(maleBtn.isSelected(),"male button is not selected!");
+
+        List<WebElement> genders = driver.findElements(By.xpath("//input[@type='radio']"));
+
+        for (WebElement eachgender : genders) {
+           if(eachgender.getAttribute("value").equals("male")){
+               eachgender.click();
+               break;
+           }
+        }
+
 
         // 10. Enter Date of birth "01/28/1990"
         WebElement dateOfBirth = driver.findElement(By.name("birthday"));
         dateOfBirth.sendKeys("01/28/1990");
+
 
         // 11. Select "Department of Engineering" from Department/Office dropdown
         Select selectDepartment = new Select(driver.findElement(By.name("department")));

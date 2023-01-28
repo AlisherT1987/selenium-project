@@ -17,7 +17,7 @@ public class LocatorPractice {
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get("http://practice.cydeo.com/login");
+        driver.get("https://practice.cydeo.com/login");
 
         // 3. Enter username: "tomsmith"
         WebElement username1 = driver.findElement(By.name("username"));
