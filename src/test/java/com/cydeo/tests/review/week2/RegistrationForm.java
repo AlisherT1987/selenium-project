@@ -4,6 +4,7 @@ import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -38,25 +39,20 @@ public class RegistrationForm {
 
     WebDriver driver;
 
-    @BeforeClass
-    public void setUp(){
+    @BeforeMethod
+    public void setUpMethod(){
         // TC#1: Registration Form Page Testing
         // 1. Open Chrome browser
         driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-    }
-
-    @BeforeMethod
-    public void setUpMethod(){
-
         // 2. Go to https://practice.cydeo.com/registration_form
         driver.get("https://practice.cydeo.com/registration_form");
 
     }
 
 
-    @Test
+    @Test (priority = 1)
     public void registration_form_page_test(){
 
         // 3. Verify title is as expected:
@@ -68,7 +64,7 @@ public class RegistrationForm {
 
     }
 
-    @Test
+    @Test (priority = 2)
     public void registration_form_page_filling_test(){
         // 3. Enter First name: "John"
         WebElement firstname = driver.findElement(By.name("firstname"));
@@ -103,29 +99,35 @@ public class RegistrationForm {
         dateOfBirth.sendKeys("01/28/1990");
 
         // 11. Select "Department of Engineering" from Department/Office dropdown
+        Select selectDepartment = new Select(driver.findElement(By.name("department")));
+        //selectDepartment.selectByVisibleText("Department of Engineering");
+        //selectDepartment.selectByValue("DE");
+        selectDepartment.selectByIndex(1); // index number starts from 0
 
 
         // 12. Select "SDET" from Job title dropdown
-
+        Select selectJobtitle = new Select(driver.findElement(By.name("job_title")));
+        selectJobtitle.selectByVisibleText("SDET");
 
         // 13. Click to "Java" from languages
-
+        driver.findElement(By.id("inlineCheckbox2")).click();
 
         // 14. Click to "Sign up" button
-
+        driver.findElement(By.xpath("//button[.='Sign up']")).click();
 
         // 15. Verify text displayed on page
         //     Expected: "Well done!"
+        WebElement resultText = driver.findElement(By.cssSelector(".alert-heading"));
+        String actualText = resultText.getText();
+        String expectedText = "Well done!";
+        Assert.assertEquals(actualText,expectedText);
+
     }
 
 
     @AfterMethod
     public void teardownMethod(){
-        driver.close();
-    }
-
-    @AfterClass
-    public void teardown(){
         driver.quit();
     }
+
 }
