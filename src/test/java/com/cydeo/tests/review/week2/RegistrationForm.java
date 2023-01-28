@@ -93,18 +93,20 @@ public class RegistrationForm {
         phonenum.sendKeys("123-456-7890");
 
         // 9. Click to "Male" from Gender
-        WebElement maleBtn = driver.findElement(By.cssSelector("input[value='male']"));
-        maleBtn.click();
+        WebElement maleBtn1 = driver.findElement(By.cssSelector("input[value='male']"));
+        WebElement maleBtn2 = driver.findElement(By.xpath(" //label[normalize-space()='Male']"));
+        maleBtn2.click();
+
         //Assert.assertTrue(maleBtn.isSelected(),"male button is not selected!");
 
-        List<WebElement> genders = driver.findElements(By.xpath("//input[@type='radio']"));
-
-        for (WebElement eachgender : genders) {
-           if(eachgender.getAttribute("value").equals("male")){
-               eachgender.click();
-               break;
-           }
-        }
+//        List<WebElement> genders = driver.findElements(By.xpath("//input[@type='radio']"));
+//
+//        for (WebElement eachgender : genders) {
+//           if(eachgender.getAttribute("value").equals("male")){
+//               eachgender.click();
+//               break;
+//           }
+//        }
 
 
         // 10. Enter Date of birth "01/28/1990"
