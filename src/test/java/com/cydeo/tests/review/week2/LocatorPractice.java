@@ -39,12 +39,22 @@ public class LocatorPractice {
 
 
         // 6. Verify text displayed on page
-
-
         //    Expected: "You logged into a secure area!"
+         WebElement resultText1 = driver.findElement(By.id("flash"));
+         WebElement resultText2 = driver.findElement(By.
+                                  xpath("//div[normalize-space(text())='You logged into a secure area!']"));
+
+         String actualText = resultText2.getText();
+         String expectedText = "You logged into a secure area!";
+
+         if(actualText.contains(expectedText)){
+             System.out.println("Result text verification test passed!");
+         }else{
+             System.out.println("Result text verification test failed!");
+         }
 
 
-
+        driver.quit();
 
     }
 }
