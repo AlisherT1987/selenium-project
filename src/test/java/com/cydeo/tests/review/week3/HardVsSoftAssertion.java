@@ -11,7 +11,7 @@ import org.testng.asserts.SoftAssert;
 
 import java.time.Duration;
 
-public class HardSoftAssertion {
+public class HardVsSoftAssertion {
 
     // TC#1: Registration Form Page Testing
     // 1. Open Chrome browser
