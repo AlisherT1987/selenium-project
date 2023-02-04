@@ -1,5 +1,6 @@
 package com.cydeo.tests.review.week3;
 
+import com.cydeo.tests.base.TestBase;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -12,7 +13,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class AlertPractice {
+public class AlertPractice extends TestBase {
 
 //    1. Open browser
 //    2. Go to website: https://practice.cydeo.com/javascript_alerts
@@ -21,22 +22,24 @@ public class AlertPractice {
 //    5. Click to OK button from the alert
 //    6. Verify “You entered: hello” text is displayed.
 
-    WebDriver driver;
-
-    @BeforeMethod
-    public void setUpMethod(){
-        // TC#1: Registration Form Page Testing
-        // 1. Open Chrome browser
-        driver = WebDriverFactory.getDriver("chrome");
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        // 2. Go to https://practice.cydeo.com/javascript_alerts
-        driver.get("https://practice.cydeo.com/javascript_alerts");
-
-    }
+//
+//    @BeforeMethod
+//    public void setUpMethod(){
+//        // TC#1: Registration Form Page Testing
+//        // 1. Open Chrome browser
+//        driver = WebDriverFactory.getDriver("chrome");
+//        driver.manage().window().maximize();
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//        // 2. Go to https://practice.cydeo.com/javascript_alerts
+//        driver.get("https://practice.cydeo.com/javascript_alerts");
+//
+//    }
 
     @Test
     public void prompt_alert_test(){
+
+        // 2. Go to https://practice.cydeo.com/javascript_alerts
+        driver.get("https://practice.cydeo.com/javascript_alerts");
 
         //    3. Click to “Click for JS Prompt” button
         WebElement jsPromptAlertBtn = driver.findElement(By.xpath("//button[@onclick='jsPrompt()']"));
@@ -63,9 +66,9 @@ public class AlertPractice {
 
     }
 
-    @AfterMethod
-    public void teardownMethod(){
-        driver.quit();
-    }
+//    @AfterMethod
+//    public void teardownMethod(){
+//        driver.quit();
+//    }
 
 }

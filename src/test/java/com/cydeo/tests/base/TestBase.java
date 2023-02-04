@@ -15,7 +15,7 @@ import java.time.Duration;
 // and you can extends this class from any Test class
 public abstract class TestBase {
 
-    WebDriver driver;
+    protected WebDriver driver;
 
     @BeforeMethod
     public void setUpMethod(){
