@@ -33,5 +33,6 @@ public abstract class TestBase {
     public void teardownMethod(){
         BrowserUtils.sleep(3);
         driver.quit();
+        //driver.close();
     }
 }
