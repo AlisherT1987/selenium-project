@@ -36,6 +36,7 @@ public class CRM_SendingMessages extends TestBase {
         driver.switchTo().defaultContent();// If you want to go back to Main HTML directly
 
         WebElement sendBtn = driver.findElement(By.id("blog-submit-button-save"));
+
         sendBtn.click();
 
 
