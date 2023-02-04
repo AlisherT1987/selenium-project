@@ -43,7 +43,7 @@ public class MultipleWindowsHandle extends TestBase {
         for (String eachWindow : allWindows) {
             driver.switchTo().window(eachWindow);
             System.out.println("eachWindow = " + eachWindow);
-            System.out.println("driver.getTitle() = " + driver.getTitle());
+            //System.out.println("driver.getTitle() = " + driver.getTitle());
         }
 
         // At the end of testing you may need to go back to default(main) window
