@@ -6,6 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
+import java.util.Set;
+
 public class MultipleWindowsHandle extends TestBase {
 
     @Test
@@ -29,11 +31,22 @@ public class MultipleWindowsHandle extends TestBase {
         newWindowMsg.click();
 
         //    6. Store parent window handle id in a variable
+        System.out.println("driver.getTitle() = " + driver.getTitle());
+        String mainWindow = driver.getWindowHandle();
+        System.out.println("mainWindow = " + mainWindow);
 
 
         //    7. Store all window handle ids in to a Set
+        Set<String> allWindows = driver.getWindowHandles();
+
+        //    9. Print out each window id
+        for (String eachWindow : allWindows) {
+            driver.switchTo().window(eachWindow);
+            System.out.println("eachWindow = " + eachWindow);
+            System.out.println("driver.getTitle() = " + driver.getTitle());
+        }
 
 
-        //    9. Print out each window title
+
     }
 }
