@@ -7,6 +7,11 @@ import org.testng.annotations.BeforeMethod;
 
 import java.time.Duration;
 
+
+// This class is parent of all Test classes
+// You can update this class based on what you are keep writing in your most test classes
+// instead writing in all Test classes, you can just write in this class
+// and you can extends this class from any Test class
 public abstract class TestBase {
 
     WebDriver driver;
