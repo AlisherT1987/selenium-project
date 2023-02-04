@@ -63,7 +63,6 @@ public class AlertPractice extends TestBase {
         Assert.assertEquals(actualText,expectedText);
 
 
-
     }
 
 //    @AfterMethod
