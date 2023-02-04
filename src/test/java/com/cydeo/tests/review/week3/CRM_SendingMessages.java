@@ -13,9 +13,9 @@ public class CRM_SendingMessages extends TestBase {
         //       1. Users are already login and on the homepage
         driver.get(ConfigurationReader.getProperty("env"));
 
-       // CRM_Utilities.login_crm(driver);
+       CRM_Utilities.login_crm(driver);
 
-        CRM_Utilities.login_crm(driver,ConfigurationReader.getProperty("username"),ConfigurationReader.getProperty("password"));
+        //CRM_Utilities.login_crm(driver,ConfigurationReader.getProperty("username"),ConfigurationReader.getProperty("password"));
 
         //       2. Users click the MESSAGE tab
 
