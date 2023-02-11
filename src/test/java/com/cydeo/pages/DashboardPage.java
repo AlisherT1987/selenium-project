@@ -15,7 +15,6 @@ public class DashboardPage {
     }
 
     @FindBy(xpath = "//ul[contains(@class,'main-menu')]/li")
-
     public List<WebElement> main_menus;
 
 
