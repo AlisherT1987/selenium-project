@@ -5,6 +5,7 @@ import com.cydeo.pages.VytrackLoginPage;
 import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.ConfigurationReader;
 import com.cydeo.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
@@ -36,11 +37,23 @@ public class ActionExample {
         loginPage.loginAsSalesManger();
         BrowserUtils.sleep(15);
         Actions actions = new Actions(Driver.getDriver());
-        for (int i = 0; i < 10; i++) {
-            actions.scrollByAmount(0,100).perform();
-            BrowserUtils.sleep(1);
-        }
+        WebElement element = Driver.getDriver().findElement(By.xpath("(//div[@class='widget-config-data'])[3]"));
+        BrowserUtils.sleep(1);
+        actions.scrollToElement(element).perform();
+        BrowserUtils.sleep(1);
         Driver.closeDriver();
+
+    }
+
+    @Test
+    public void testScrollByAmount(){
+
+        Driver.getDriver().get("https://demoqa.com/text-box");
+        Actions actions=new Actions(Driver.getDriver());
+
+
+
+
 
     }
 }
