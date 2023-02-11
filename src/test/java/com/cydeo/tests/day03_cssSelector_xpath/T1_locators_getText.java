@@ -28,13 +28,13 @@ public class T1_locators_getText {
         WebElement inputPassword = driver.findElement(By.name("USER_PASSWORD"));
         inputPassword.sendKeys("incorrect");
 
-        //5- Click to the login button.
+        //5- Click to the loginAsDriver button.
         WebElement loginButton = driver.findElement(By.className("login-btn"));
         loginButton.click();
 
         //6- Verify error message text is as expected:
-        //Expected: Incorrect login or password
-        String expectedErrorText = "Incorrect login or password";
+        //Expected: Incorrect loginAsDriver or password
+        String expectedErrorText = "Incorrect loginAsDriver or password";
         String actualErrorText = driver.findElement(By.className("errortext")).getText();
 
         if (actualErrorText.equals(expectedErrorText)){

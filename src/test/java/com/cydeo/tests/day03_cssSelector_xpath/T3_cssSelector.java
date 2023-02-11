@@ -22,7 +22,7 @@ public class T3_cssSelector {
         String expectedLoginText = "Log In";
 
         //Locating loginButton using class attribute's value
-        //WebElement loginButton = driver.findElement(By.className("login-btn"));
+        //WebElement loginButton = driver.findElement(By.className("loginAsDriver-btn"));
 
         //                                  tagName[attribute='value']
 
@@ -30,7 +30,7 @@ public class T3_cssSelector {
         //WebElement loginButton = driver.findElement(By.cssSelector("input[type='submit']"));
 
         //Locating loginButton using cssSelector using class attribute's value
-        //WebElement loginButton = driver.findElement(By.cssSelector("input[class='login-btn']"));
+        //WebElement loginButton = driver.findElement(By.cssSelector("input[class='loginAsDriver-btn']"));
 
         //Locating loginButton using cssSelector using value attribute's value
         //WebElement loginButton = driver.findElement(By.cssSelector("input[value='Log In']"));

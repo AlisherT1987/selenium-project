@@ -52,7 +52,7 @@ public class T7_T8_T9_POM_Practices {
 
     @Test
     public void t9_wrong_email_or_password_error_message(){
-        //TC #9: Library negative login
+        //TC #9: Library negative loginAsDriver
 
         //3- Enter incorrect username or incorrect password
         loginPage.emailInput.sendKeys("username@wrongsomething.com");

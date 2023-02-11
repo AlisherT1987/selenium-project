@@ -13,7 +13,7 @@ public class CRM_SendingMessages extends TestBase {
 
     @Test
     public void sending_messages_test(){
-        //       1. Users are already login and on the homepage
+        //       1. Users are already loginAsDriver and on the homepage
         driver.get(ConfigurationReader.getProperty("env"));
 
        CRM_Utilities.login_crm(driver);

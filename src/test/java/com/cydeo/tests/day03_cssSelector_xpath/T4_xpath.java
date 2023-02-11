@@ -29,7 +29,7 @@ public class T4_xpath {
         //WebElement loginButton = driver.findElement(By.xpath("//input[@value='Log In']"));
 
         //Locating loginButton using xpath using class attribute's value
-        WebElement loginButton = driver.findElement(By.xpath("//input[@class='login-btn']"));
+        WebElement loginButton = driver.findElement(By.xpath("//input[@class='loginAsDriver-btn']"));
 
         String actualLoginText = loginButton.getAttribute("value"); //--> Log In
 
