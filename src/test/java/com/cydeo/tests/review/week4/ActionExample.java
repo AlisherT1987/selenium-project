@@ -51,7 +51,16 @@ public class ActionExample {
         Driver.getDriver().get("https://demoqa.com/text-box");
         Actions actions=new Actions(Driver.getDriver());
 
+        for (int i = 0; i < 10; i++) {
+            actions.scrollByAmount(0,25).perform();
+            BrowserUtils.sleep(1);
+        }
 
+
+        for (int i = 0; i < 10; i++) {
+            actions.scrollByAmount(0,-25).perform();
+            BrowserUtils.sleep(1);
+        }
 
 
 
